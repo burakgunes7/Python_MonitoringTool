@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import psutil
 import platform
-import cpuinfo
+
 
 def get_uptime():
     with open('/proc/uptime', 'r') as f:
@@ -10,7 +10,7 @@ def get_uptime():
     return uptime_seconds
 
 
-print('CPU',cpuinfo.get_cpu_info()["brand"],'Platform :', platform.processor(),'Uptime :', get_uptime())
+print('Platform :', platform.processor(),'Uptime :', get_uptime())
 
 while True:
    cpu=psutil.cpu_percent(interval=1)
