@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import psutil
 import platform
-
+import shutil
 
 def get_uptime():
     with open('/proc/uptime', 'r') as f:
@@ -16,8 +16,9 @@ while True:
    cpu=psutil.cpu_percent(interval=1)
    ram=psutil.virtual_memory().percent
    avail_ram=psutil.virtual_memory().available * 100 / psutil.virtual_memory().total
-   disk= psutil.disk_usage('/')
+   avail_ram = "{:.2f}".format(avail_ram)
+   disk=  shutil.disk_usage('/')
    time=psutil.boot_time()
-   print('CPU ',cpu, 'MEM ',ram, 'AVAIL', avail_ram, 'DISK ' , disk)
+   print('CPU % ',cpu, 'MEM % ',ram, 'AVAIL %', avail_ram, 'DISK' , disk)
 
 
