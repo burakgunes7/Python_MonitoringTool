@@ -2,6 +2,8 @@
 import psutil
 import platform
 import shutil
+import pprint
+import curses
 
 def get_uptime():
     with open('/proc/uptime', 'r') as f:
@@ -12,6 +14,15 @@ def get_uptime():
 
 print('Platform :', platform.processor(),'Uptime :', get_uptime())
 
+listOfProcessNames = list()
+# Iterate over all running processes
+for proc in psutil.process_iter():
+   # Get process detail as dictionary
+   pInfoDict = proc.as_dict(attrs=['pid', 'name', 'cpu_percent'])
+   # Append dict of process detail in list
+   listOfProcessNames.append(pInfoDict)
+pprint.pprint(listOfProcessNames);
+
 while True:
    cpu=psutil.cpu_percent(interval=1)
    ram=psutil.virtual_memory().percent
@@ -20,5 +31,3 @@ while True:
    disk=  shutil.disk_usage('/')
    time=psutil.boot_time()
    print('CPU % ',cpu, 'MEM % ',ram, 'AVAIL %', avail_ram, 'DISK' , disk)
-
-
