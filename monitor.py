@@ -1,8 +1,10 @@
 #!/usr/bin/env python
+import sys
 import psutil
 import platform
 import shutil
 import pprint
+import os
 import time
 from locale import THOUSEP
 from click import style
@@ -10,6 +12,7 @@ from rich.console import Console
 from rich.theme import Theme
 from rich.table import Table
 from rich.markdown import Markdown
+from psutil._common import bytes2human
 
 console = Console()
 custom_theme = Theme({"success": "green", "error": "bold red"})
@@ -25,6 +28,7 @@ table.add_column("MEM", style="magenta")
 table.add_column("AVAIL", style="cyan")
 table.add_column("DISK", justify="middle", style="cyan")
 
+
 while True:
     cpu = psutil.cpu_percent(interval=1)
     ram = psutil.virtual_memory().percent
@@ -33,7 +37,8 @@ while True:
     avail_ram = "{:.2f}".format(avail_ram)
     disk = shutil.disk_usage('/')
     time = psutil.boot_time()
-    table.add_row(f"% {cpu}", f"% {ram}", f"% {avail_ram}", f"{disk}")
+    table.add_row(f"% {cpu}", f"% {ram}",
+                  f"% {avail_ram}", f"{disk}")
     console.print(table)
 
 
