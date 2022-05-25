@@ -19,7 +19,7 @@ custom_theme = Theme({"success": "green", "error": "bold red"})
 table = Table()
 
 MARKDOWN = """
-# Python Monitoring Tool
+# Python Resources Monitoring Tool
 """
 console.print(Markdown(MARKDOWN))
 
