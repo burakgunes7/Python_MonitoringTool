@@ -15,7 +15,6 @@ from rich.table import Table
 from rich.markdown import Markdown
 from psutil._common import bytes2human
 
-os.system
 os.system('cls' if os.name == 'nt' else 'clear')
 
 console = Console()
