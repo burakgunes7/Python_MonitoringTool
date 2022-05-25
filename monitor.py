@@ -35,7 +35,6 @@ while True:
         psutil.virtual_memory().total
     avail_ram = "{:.2f}".format(avail_ram)
     disk = shutil.disk_usage('/')
-
     time = psutil.boot_time()
     table.add_row(f"% {cpu}", f"% {ram}",
                   f"% {avail_ram}")
