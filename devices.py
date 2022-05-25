@@ -27,13 +27,13 @@ MARKDOWN = """
 """
 console.print(Markdown(MARKDOWN))
 
-table.add_column("Device", justify="middle", style="cyan")
-table.add_column("Total", justify="middle", style="cyan")
-table.add_column("Used", justify="middle", style="cyan")
-table.add_column("Free", justify="middle", style="cyan")
-table.add_column("Use", justify="middle", style="cyan")
-table.add_column("Type", justify="middle", style="cyan")
-table.add_column("Mount", justify="middle", style="cyan")
+table.add_column("Device", justify="center", style="cyan")
+table.add_column("Total", justify="center", style="cyan")
+table.add_column("Used", justify="center", style="cyan")
+table.add_column("Free", justify="center", style="cyan")
+table.add_column("Use", justify="center", style="cyan")
+table.add_column("Type", justify="center", style="cyan")
+table.add_column("Mount", justify="center", style="cyan")
 
 for part in psutil.disk_partitions(all=False):
     if os.name == 'nt':

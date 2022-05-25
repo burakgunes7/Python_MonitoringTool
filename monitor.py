@@ -17,7 +17,6 @@ from rich.padding import Padding
 from psutil._common import bytes2human
 from rich.layout import Layout
 
-os.system
 os.system('cls' if os.name == 'nt' else 'clear')
 
 console = Console()
@@ -35,9 +34,9 @@ while True:
     console.print(Markdown(MARKDOWN))
 
     table = Table()
-    table.add_column("CPU", style="cyan")
-    table.add_column("MEMORY", style="magenta")
-    table.add_column("AVAILABLE MEMORY", style="cyan")
+    table.add_column("CPU",justify="center" ,style="cyan")
+    table.add_column("MEMORY", justify="center",style="magenta")
+    table.add_column("AVAILABLE MEMORY",justify="center", style="cyan")
 
     cpu = psutil.cpu_percent(interval=1)
     ram = psutil.virtual_memory().percent
