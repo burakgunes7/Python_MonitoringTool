@@ -6,6 +6,7 @@ import shutil
 import pprint
 import os
 import time
+import curses
 from locale import THOUSEP
 from click import style
 from rich.console import Console
@@ -13,6 +14,9 @@ from rich.theme import Theme
 from rich.table import Table
 from rich.markdown import Markdown
 from psutil._common import bytes2human
+
+os.system
+os.system('cls' if os.name == 'nt' else 'clear')
 
 console = Console()
 custom_theme = Theme({"success": "green", "error": "bold red"})
@@ -42,3 +46,4 @@ for part in psutil.disk_partitions(all=False):
                   f"{int(usage.percent)}", f"{(part.fstype)}", f"{(part.mountpoint)}")
 
 console.print(table)
+sys.stdin.read(1)
