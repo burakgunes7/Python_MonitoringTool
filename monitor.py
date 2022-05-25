@@ -25,8 +25,7 @@ console.print(Markdown(MARKDOWN))
 
 table.add_column("CPU", style="cyan")
 table.add_column("MEM", style="magenta")
-table.add_column("AVAIL", style="cyan")
-table.add_column("DISK", justify="middle", style="cyan")
+table.add_column("AVAIL MEM", style="cyan")
 
 
 while True:
@@ -36,9 +35,10 @@ while True:
         psutil.virtual_memory().total
     avail_ram = "{:.2f}".format(avail_ram)
     disk = shutil.disk_usage('/')
+
     time = psutil.boot_time()
     table.add_row(f"% {cpu}", f"% {ram}",
-                  f"% {avail_ram}", f"{disk}")
+                  f"% {avail_ram}")
     console.print(table)
 
 
