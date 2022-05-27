@@ -1,2 +1,11 @@
 #!/bin/sh
-python3 /home/burak/Desktop/Python_MonitoringTool/monitor.py
+
+#source "/home/turkai/Desktop/Python_Monitoring/monitor/bin/activate"
+
+activate () {
+  . ./monitor/bin/activate
+}
+
+activate
+
+python3 /home/turkai/Desktop/Python_Monitoring/monitor.py
