@@ -3,7 +3,7 @@
 #source "/home/turkai/Desktop/Python_Monitoring/monitor/bin/activate"
 
 activate () {
-  . ./monitor/bin/activate
+  . /home/turkai/Desktop/Python_Monitoring/monitor/bin/activate
 }
 
 activate
